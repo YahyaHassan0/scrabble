@@ -1,5 +1,5 @@
 #include <ctype.h>
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -18,7 +18,6 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-
     // TODO: Print the winner
     if (score1 > score2)
     {
@@ -36,29 +35,22 @@ int main(void)
 
 int compute_score(string word)
 {
-    int s = strlen(word);   //length of the word
-    char k[s];  // array with the same length
-    int total = 0; //total the sum between the chars
+    int s = strlen(word); // length of the word
+    char k[s];            // array with the same length
+    int total = 0;        // total the sum between the chars
     int X;
 
-    for (int i = 0 ; i < s; i++)    //loop excuting s times (chars numbers)
+    for (int i = 0; i < s; i++) // loop excuting s times (chars numbers)
     {
-        k[i] = tolower(word[i]);    //changing chars to lower case
+        k[i] = tolower(word[i]); // changing chars to lower case
         if (islower(k[i]))
         {
-            X = k[i] - 97;  //configuring the array index based on POINTS
-            total = total + POINTS[X]; //char points sum
+            X = k[i] - 97;             // configuring the array index based on POINTS
+            total = total + POINTS[X]; // char points sum
         }
         else
-        {}
-
-
-
-
-
-
-
-
+        {
+        }
     }
     return total;
 }
